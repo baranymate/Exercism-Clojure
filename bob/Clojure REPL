@@ -1,0 +1,93 @@
+REPL Instructions
+
+Code can be entered at the bottom and executed by pressing shift+enter.
+
+Try it now by typing (+ 1 1) in the bottom section and pressing shift+enter.
+
+Working in another Clojure file and sending forms to the REPL is the most efficient way to work. Use the following key bindings to send code to the REPL. See the settings for more keybindings.
+
+ctrl-alt-, then b
+Execute block. Finds the block of Clojure code your cursor is in and executes that.
+
+ctrl-alt-, s
+Executes the selection. Sends the selected text to the REPL.
+
+You can disable this help text in the settings.
+Atom Ink does not appear to be installed. Install it to get a better REPL experience.
+Starting REPL with lein in /home/barany/exercism/clojure/bob
+nREPL server started on port 45175 on host 127.0.0.1 - nrepl://127.0.0.1:45175
+Refreshing code...
+clojure.tools.namespace.repl not available. Add proto-repl in your project.clj as a dependency to allow refresh. See https://clojars.org/proto-repl
+Refresh Warning: Execution error (IllegalArgumentException) at user/eval1425 (form-init7646824831167433111.clj:1).
+No such namespace: clojure.tools.namespace.repl
+Refresh Warning: Execution error (IllegalArgumentException) at user/eval1425 (form-init7646824831167433111.clj:1).
+No such namespace: clojure.tools.namespace.repl
+(clojure-version)
+user=>
+"1.10.0"
+(ends-with? "yes?" "?")
+Syntax error compiling at (form-init7646824831167433111.clj:1:1).
+Unable to resolve symbol: ends-with? in this context
+(blank? "yes")
+Syntax error compiling at (form-init7646824831167433111.clj:1:1).
+Unable to resolve symbol: blank? in this context
+(:require [clojure.string :as str])
+Syntax error (ClassNotFoundException) compiling at (form-init7646824831167433111.clj:1:1).
+clojure.string
+(require '[clojure.string :as str])
+user=>
+nil
+(ends-with? "yes?" "?")
+Syntax error compiling at (form-init7646824831167433111.clj:1:1).
+Unable to resolve symbol: ends-with? in this context
+(str/ends-with? "yes?" "?")
+user=>
+true
+REPL already running
+(every? #(Character/isUpperCase %) "123456GO")
+user=>
+false
+(every? #(Character/isUpperCase %) "GO")
+user=>
+true
+(every? #(or (Character/isUpperCase %) (Character/isDigit %)) "123456GO")
+user=>
+true
+(every? #(or (Character/isUpperCase %) (Character/isDigit %)) "12345 6GO")
+user=>
+false
+(last "12345 6GO")
+user=>
+\O
+(last "12345 6GO?")
+user=>
+\?
+( = (last "Questions?") \?)
+user=>
+true
+( = (last "Questions!") \?)
+user=>
+false
+(every? #(Character/isWhiteSpace %) "    ")
+Syntax error (IllegalArgumentException) compiling . at (form-init7646824831167433111.clj:1:14).
+No matching method isWhiteSpace found taking 1 args for class java.lang.Character
+(every? #(Character/isWhitespace %) "    ")
+user=>
+true
+(every? #(Character/isWhitespace %) "apa    ")
+user=>
+false
+(every? #(Character/isWhitespace %) "\t\t\t")
+user=>
+true
+(every? #(Character/isWhitespace %) "")
+user=>
+true
+(any? #(Character/isUpperCase %) "ZOMG THE %^*@#$(*^ ZOMBIES ARE COMING!!11!!1!")
+Execution error (ArityException) at user/eval2088 (form-init7646824831167433111.clj:1).
+Wrong number of args (2) passed to: clojure.core/any?
+(some #(Character/isUpperCase %) "ZOMG THE %^*@#$(*^ ZOMBIES ARE COMING!!11!!1!")
+user=>
+true
+--------------------
+(some #(Character/isUpperCase %) "nincs ok a panikra")

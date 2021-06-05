@@ -1,0 +1,31 @@
+REPL Instructions
+
+Code can be entered at the bottom and executed by pressing shift+enter.
+
+Try it now by typing (+ 1 1) in the bottom section and pressing shift+enter.
+
+Working in another Clojure file and sending forms to the REPL is the most efficient way to work. Use the following key bindings to send code to the REPL. See the settings for more keybindings.
+
+ctrl-alt-, then b
+Execute block. Finds the block of Clojure code your cursor is in and executes that.
+
+ctrl-alt-, s
+Executes the selection. Sends the selected text to the REPL.
+
+You can disable this help text in the settings.
+Atom Ink does not appear to be installed. Install it to get a better REPL experience.
+Starting REPL with lein in /home/barany/exercism/clojure/run-length-encoding
+nREPL server started on port 41343 on host 127.0.0.1 - nrepl://127.0.0.1:41343
+Refreshing code...
+No user namespace defined. Defaulting to clojure.tools.namespace.repl/refresh.
+
+clojure.tools.namespace.repl not available. Add proto-repl in your project.clj as a dependency to allow refresh. See https://clojars.org/proto-repl
+Refresh Warning: Execution error (IllegalArgumentException) at user/eval1425 (form-init15319822083968555629.clj:1).
+No such namespace: clojure.tools.namespace.repl
+Refresh Warning: Execution error (IllegalArgumentException) at user/eval1425 (form-init15319822083968555629.clj:1).
+No such namespace: clojure.tools.namespace.repl
+(re-seq #"\D" "2 hs2q q2w2 ")
+user=>
+(" " "h" "s" "q" " " "q" "w" " ")
+--------------------
+(re-seq #"\d+" "2 hs2q q2w2 ")

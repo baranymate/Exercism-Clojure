@@ -1,0 +1,48 @@
+REPL Instructions
+
+Code can be entered at the bottom and executed by pressing shift+enter.
+
+Try it now by typing (+ 1 1) in the bottom section and pressing shift+enter.
+
+Working in another Clojure file and sending forms to the REPL is the most efficient way to work. Use the following key bindings to send code to the REPL. See the settings for more keybindings.
+
+ctrl-alt-, then b
+Execute block. Finds the block of Clojure code your cursor is in and executes that.
+
+ctrl-alt-, s
+Executes the selection. Sends the selected text to the REPL.
+
+You can disable this help text in the settings.
+Atom Ink does not appear to be installed. Install it to get a better REPL experience.
+Starting REPL with lein in /home/barany/exercism/clojure/nucleotide-count
+nREPL server started on port 37395 on host 127.0.0.1 - nrepl://127.0.0.1:37395
+Refreshing code...
+No user namespace defined. Defaulting to clojure.tools.namespace.repl/refresh.
+
+clojure.tools.namespace.repl not available. Add proto-repl in your project.clj as a dependency to allow refresh. See https://clojars.org/proto-repl
+Refresh Warning: Execution error (IllegalArgumentException) at user/eval1425 (form-init8065355424683112145.clj:1).
+No such namespace: clojure.tools.namespace.repl
+Refresh Warning: Execution error (IllegalArgumentException) at user/eval1425 (form-init8065355424683112145.clj:1).
+No such namespace: clojure.tools.namespace.repl
+(filter #(= % \A) "ABCDAGFA")
+user=>
+(\A \A \A)
+(defn count-of-nucleotide-in-strand [nucleotide strand]
+  (count (filter #(= % nucleotide)) strand))
+Syntax error (ArityException) compiling count at (nucleotide_count.clj:4:3).
+Wrong number of args (2) passed to: clojure.core/count--inliner--5506
+(defn count-of-nucleotide-in-strand [nucleotide strand]
+  (count (filter #(= % nucleotide) strand)))
+user=>
+#'user/count-of-nucleotide-in-strand
+(defn count-of-nucleotide-in-strand [nucleotide strand]
+  (count (filter #(= % nucleotide) strand)))
+
+
+(defn nucleotide-counts [strand]
+  '(\A, \C, \G, \T)
+)
+user=>
+#'user/nucleotide-counts
+--------------------
+(nucleotide-counts)

@@ -1,0 +1,108 @@
+REPL Instructions
+
+Code can be entered at the bottom and executed by pressing shift+enter.
+
+Try it now by typing (+ 1 1) in the bottom section and pressing shift+enter.
+
+Working in another Clojure file and sending forms to the REPL is the most efficient way to work. Use the following key bindings to send code to the REPL. See the settings for more keybindings.
+
+ctrl-alt-, then b
+Execute block. Finds the block of Clojure code your cursor is in and executes that.
+
+ctrl-alt-, s
+Executes the selection. Sends the selected text to the REPL.
+
+You can disable this help text in the settings.
+Atom Ink does not appear to be installed. Install it to get a better REPL experience.
+Starting REPL with lein in /home/barany/exercism/clojure/isbn-verifier
+nREPL server started on port 45315 on host 127.0.0.1 - nrepl://127.0.0.1:45315
+Refreshing code...
+No user namespace defined. Defaulting to clojure.tools.namespace.repl/refresh.
+
+clojure.tools.namespace.repl not available. Add proto-repl in your project.clj as a dependency to allow refresh. See https://clojars.org/proto-repl
+Refresh Warning: Execution error (IllegalArgumentException) at user/eval1425 (form-init10757407890311297895.clj:1).
+No such namespace: clojure.tools.namespace.repl
+Refresh Warning: Execution error (IllegalArgumentException) at user/eval1425 (form-init10757407890311297895.clj:1).
+No such namespace: clojure.tools.namespace.repl
+(ns isbn-verifier
+  (:require [clojure.string :as str]))
+
+(defn isbn? [isbn]
+
+)
+isbn-verifier=>
+#'isbn-verifier/isbn?
+(str/replace "3-598-21508-8" #"-" "")
+isbn-verifier=>
+"3598215088"
+(defn isbn? [isbn]
+  (str/replace "3-598-21508-8" #"-" "")
+)
+isbn-verifier=>
+#'isbn-verifier/isbn?
+(re-find #"X" "3-598-21508-8")
+isbn-verifier=>
+nil
+(defn invalid? [isbn]
+  (and (re-find #"[^0-9X]" isbn)
+        (= (count x 10))))
+Syntax error (ArityException) compiling count at (isbn_verifier.clj:6:12).
+Wrong number of args (2) passed to: clojure.core/count--inliner--5506
+(defn invalid? [isbn]
+  (and (re-find #"[^0-9X]" isbn)
+        (= (count x) 10)))
+Syntax error compiling at (isbn_verifier.clj:6:12).
+Unable to resolve symbol: x in this context
+(defn invalid? [isbn]
+  (and (re-find #"[^0-9X]" isbn)
+        (= (count isbn) 10)))
+isbn-verifier=>
+#'isbn-verifier/invalid?
+(defn isbn? [isbn]
+  (invalid? (str/replace "3-598-21508-8" #"-" ""))
+)
+isbn-verifier=>
+#'isbn-verifier/isbn?
+(re-matches #"hello" "hello-world")
+isbn-verifier=>
+nil
+(re-matches #"hello" "hello")
+isbn-verifier=>
+"hello"
+(re-matches #"hello" "hello-world")
+isbn-verifier=>
+nil
+(and nil true)
+isbn-verifier=>
+nil
+isbn-verifier=>
+nil
+(and nil true)
+isbn-verifier=>
+nil
+(if nil :true :false)
+isbn-verifier=>
+:false
+(re-matches #"\d" "hello-world")
+isbn-verifier=>
+nil
+(re-matches #"\d" "1234567")
+isbn-verifier=>
+nil
+(re-matches #"\d" "1")
+isbn-verifier=>
+"1"
+(re-matches #"\d+" "1")
+isbn-verifier=>
+"1"
+(re-matches #"\d+" "12345667")
+isbn-verifier=>
+"12345667"
+(re-matches #"\d+X" "12345667")
+isbn-verifier=>
+nil
+(re-matches #"\d+X" "12345667X")
+isbn-verifier=>
+"12345667X"
+--------------------
+(re-matches #"\d+|\dX" "12345667X")

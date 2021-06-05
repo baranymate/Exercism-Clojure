@@ -1,0 +1,63 @@
+REPL Instructions
+
+Code can be entered at the bottom and executed by pressing shift+enter.
+
+Try it now by typing (+ 1 1) in the bottom section and pressing shift+enter.
+
+Working in another Clojure file and sending forms to the REPL is the most efficient way to work. Use the following key bindings to send code to the REPL. See the settings for more keybindings.
+
+ctrl-alt-, then b
+Execute block. Finds the block of Clojure code your cursor is in and executes that.
+
+ctrl-alt-, s
+Executes the selection. Sends the selected text to the REPL.
+
+You can disable this help text in the settings.
+Atom Ink does not appear to be installed. Install it to get a better REPL experience.
+Starting REPL with lein in /home/barany/exercism/clojure/armstrong-numbers
+nREPL server started on port 44527 on host 127.0.0.1 - nrepl://127.0.0.1:44527
+Refreshing code...
+No user namespace defined. Defaulting to clojure.tools.namespace.repl/refresh.
+
+clojure.tools.namespace.repl not available. Add proto-repl in your project.clj as a dependency to allow refresh. See https://clojars.org/proto-repl
+Refresh Warning: Execution error (IllegalArgumentException) at user/eval1425 (form-init17504952158871086996.clj:1).
+No such namespace: clojure.tools.namespace.repl
+Refresh Warning: Execution error (IllegalArgumentException) at user/eval1425 (form-init17504952158871086996.clj:1).
+No such namespace: clojure.tools.namespace.repl
+(quot 10 11)
+user=>
+0
+(quot 152 10)
+user=>
+15
+(defn digitalize [num digits]
+  (if (zero? num)
+    digits
+  (recur (quot num 10) (conj digits (mod num 10)))))
+user=>
+#'user/digitalize
+(digitalize 152 [])
+user=>
+[2 5 1]
+(digitalize 152 ())
+user=>
+(1 5 2)
+(map Math/pow [1 2 3] [2 2 2])
+Syntax error compiling at (armstrong_numbers.clj:1:1).
+Unable to find static field: pow in class java.lang.Math
+(Math/pow 1 2)
+user=>
+1.0
+(Math/pow 1 5)
+user=>
+1.0
+(map Math/pow [1 2 3] [2 2 2])
+Syntax error compiling at (armstrong_numbers.clj:1:1).
+Unable to find static field: pow in class java.lang.Math
+(defn exp [base pow])
+user=>
+#'user/exp
+--------------------
+(defn exp [base pow]
+(reduce * (repeat base pow))
+)
